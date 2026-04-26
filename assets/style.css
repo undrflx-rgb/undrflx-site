@@ -14,6 +14,44 @@
    ページ幅: 1440px / コンテンツ幅: 1200px / 余白: 120px
 ============================================================ */
 
+/* ============================================================
+   LOADING SCREEN
+============================================================ */
+.loading {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: #111111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.loading__title {
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ff3d1b;
+  margin: 0;
+}
+
+.loading__bar-wrap {
+  width: 160px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+
+.loading__bar {
+  height: 100%;
+  width: 0%;
+  background-color: #ff3d1b;
+  transition: width 0.05s linear;
+}
+
 /* ---- 基本 -------------------------------------------------- */
 html {
   font-size: 16px;
@@ -109,7 +147,8 @@ a {
 .hero__content {
   position: absolute;
   left: 127px;
-  top: 210px;
+  /* top: 210px; */
+  top: 22vw;
   width: 1200px;
   max-width: calc(100% - 254px);
   display: flex;
@@ -143,7 +182,7 @@ a {
 /* Hero subtitle: Jost Light 300 / 24px / 150%lh / #E2E2E2 */
 .hero__sub {
   font-weight: 300;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.5;
   color: #e2e2e2;
   margin: 0;
@@ -289,12 +328,13 @@ a {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  perspective: 800px; /* 子要素の3D奥行き基点 */
 }
 
 .works-card a {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
 /* 画像エリア: height:340px */
@@ -304,6 +344,7 @@ a {
   background-color: #222222; /* 画像未設定時のプレースホルダー色 */
   overflow: hidden;
   position: relative;
+  will-change: transform; /* 3Dアニメーション最適化 */
 }
 
 /* ---- 画像の挿入方法 ----------------------------------------
