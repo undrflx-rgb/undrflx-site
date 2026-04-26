@@ -1,0 +1,556 @@
+/* ============================================================
+   UNDRFLX — works-detail.css
+   Works詳細ページ共通スタイル
+   Figma: Sub page_Works_02 を基準に作成
+
+   ページ背景: #F6F6F6 (fill_DTOVSH)
+   ヘッダー/情報セクション背景: #111111
+   メインカラー: #FF3D1B
+============================================================ */
+
+body {
+  background-color: #f6f6f6;
+}
+
+/* ヘッダーは#111111背景のまま維持 */
+.header {
+  background-color: #111111;
+}
+
+/* ============================================================
+   PAGE TITLE SECTION
+   Figma: layout_F9D9FS / width:1200px / padding-top:80px / gap:24px
+   bg: ページと同色 (#F6F6F6) だがここは#111111の背景上に乗る
+============================================================ */
+.wd-title-section {
+  /* background-color: #111111; */
+  padding-top: 120px; /* ヘッダー分 */
+}
+
+.wd-title-section__inner {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 80px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* タイトルブロック
+   Figma: layout_1J2Z9I / padding-left:40px / 左ボーダー:8px solid #FF3D1B */
+.wd-title-section__title-wrap {
+  border-left: 8px solid #ff3d1b;
+  padding-left: 40px;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+
+/* タイトル: Jost ExtraBold Italic 84px / 100%lh / color-bk
+   ※ 暗い背景のため #E2E2E2 で表示 */
+.wd-title-section__title {
+  font-weight: 800;
+  font-style: italic;
+  font-size: 84px;
+  line-height: 1;
+  color: #1d1d1d;
+  margin: 0;
+}
+
+/* クライアント情報行
+   Figma: layout_D1BTHF / row / justify:center / align:center / gap:20px */
+.wd-title-section__client-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: left;
+  gap: 20px;
+}
+
+/* 制作会社: Jost Regular 18px / #7E7E7E */
+.wd-title-section__company {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #7e7e7e;
+}
+
+/* プロジェクト名: Jost Regular 18px / #E2E2E2 (暗背景版) */
+.wd-title-section__project-name {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #1d1d1d;
+}
+
+/* ============================================================
+   PROJECT INFO SECTION
+   Figma: layout_WT2CQ5 / bg:#111111 / padding:200px 120px 100px
+   全幅1440px / 内部: 2カラム (520px + 580px) + 画像
+============================================================ */
+.wd-info-section {
+  background-color: #111111;
+  padding: 200px 120px 100px;
+  position: relative;
+  margin-top: -130px;
+}
+
+.wd-point-section {
+  background-color: #111111;
+  padding: 100px 120px;
+  position: relative;
+}
+
+.point-list {
+  list-style: disc;
+  padding-left: 16px;
+}
+
+.point-list li::marker {
+  color: #ff3d1b;
+}
+
+.point-list li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.wd-info-section__inner {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* ----  LEFT: プロジェクト情報テーブル --------------------
+   Figma: layout_64RFY4 / width:520px / col / gap:20px */
+.wd-info-table {
+  width: 520px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 各行: Figma layout_7720PT / row / gap:20px */
+.wd-info-table__row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-self: stretch;
+}
+
+/* ラベル: Figma layout_3BA0SN / width:140px / color:#FF3D1B
+   フォント: Jost Regular 400 / 16px / 160%lh (style_U1K4KB) */
+.wd-info-table__label {
+  width: 140px;
+  flex-shrink: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ff3d1b;
+}
+
+/* 値: fill width / color:#E2E2E2
+   フォント: Jost Regular 400 / 16px / 160%lh */
+.wd-info-table__value {
+  flex: 1;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #e2e2e2;
+}
+
+/* チーム規模行 */
+.wd-team-row {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+
+.wd-team-row__role {
+  width: 160px;
+  font-size: 16px;
+  color: #e2e2e2;
+}
+
+.wd-team-row__count {
+  font-size: 16px;
+  color: #e2e2e2;
+}
+
+/* ----  RIGHT: Overview ----------------------------------
+   Figma: layout_NT3IWQ / width:580px / col / gap:20px */
+.wd-overview {
+  width: 580px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ヘッダー行: border-bottom:1px solid #FF3D1B / pb:10px */
+.wd-overview__head {
+  border-bottom: 1px solid #ff3d1b;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* "Overview": Jost SemiBold 600 / 28px / 180%lh / ls:10% / #FF3D1B (style_CG6IZB) */
+.wd-overview__title {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  color: #ff3d1b;
+}
+
+/* 本文: Jost Regular 400 / 18px / 180%lh / ls:10% / #E2E2E2 (style_8LBA60) */
+.wd-overview__text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.8;
+  letter-spacing: 0.1em;
+  color: #e2e2e2;
+  margin: 0;
+}
+
+/* ----  ヒーロー画像エリア -------------------------------
+   Figma: layout_ECGJCW / x:470 y:0 / 970×540px
+   2分割 (各485px) */
+.wd-hero-section {
+  width: 98%;
+  max-width: 1440px;
+  padding: 100px 0 0;
+  position: relative;
+  z-index: 10;
+  margin: 0 auto;
+}
+.wd-info-section__hero-img {
+  display: flex;
+  flex-direction: row;
+  width: 970px;
+  height: 540px;
+  /* margin: 0 auto; */
+  overflow: hidden;
+  background-color: #1a1a1a;
+  margin-right: 0px;
+  margin-left: auto;
+}
+
+.wd-info-section__hero-img-half {
+  width: 485px;
+  height: 540px;
+  overflow: hidden;
+  background-color: #222;
+}
+
+.wd-info-section__hero-img-half img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.wd-info-section__hero-img-half img:not([src]),
+.wd-info-section__hero-img-half img[src=""] {
+  display: none;
+}
+
+/* ============================================================
+   WORKS SHOWCASE SECTION
+   Figma: contents > Frame 32 / bg:#F6F6F6
+============================================================ */
+.wd-showcase-wrap {
+  background-color: #f6f6f6;
+  padding: 100px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+/* 各作品セクション
+   Figma: layout_K12PPA / width:1200px / col / gap:80px */
+.wd-showcase {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* サブタイトル
+   Figma: layout_3N4DO5 / col / gap:20px */
+.wd-showcase__sub-title {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-self: stretch;
+}
+
+/* 作品タイトル: Jost ExtraBold Italic 800 / 48px / 100%lh / #1D1D1D (style_R9YTQO) */
+.wd-showcase__name {
+  font-weight: 800;
+  font-style: italic;
+  font-size: 48px;
+  line-height: 1;
+  color: #1d1d1d;
+  margin: 0;
+}
+
+/* URL: Jost Regular 400 / 18px / 150%lh / underline / #4261FF */
+.wd-showcase__url {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #4261ff;
+  text-decoration: underline;
+  word-break: break-all;
+}
+
+.wd-showcase__url:hover {
+  opacity: 0.7;
+}
+
+/* 画像エリア
+   Figma: layout_PMWVCR / row / gap:50px / align:center */
+.wd-showcase__images {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+/* PC画像: width:890px / 縦長 */
+.wd-showcase__img-pc {
+  width: 890px;
+  flex-shrink: 0;
+  background-color: #ddd;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.wd-showcase__img-pc img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wd-showcase__img-pc img:not([src]),
+.wd-showcase__img-pc img[src=""] {
+  min-height: 500px;
+  display: block;
+  background-color: #ddd;
+}
+
+/* SP画像: 残り幅 / 縦長 */
+.wd-showcase__img-sp {
+  flex: 1;
+  background-color: #ccc;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.wd-showcase__img-sp img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wd-showcase__img-sp img:not([src]),
+.wd-showcase__img-sp img[src=""] {
+  min-height: 500px;
+  display: block;
+  background-color: #ccc;
+}
+
+/* ============================================================
+   PAGE NAVIGATION
+============================================================ */
+.wd-page-nav {
+  width: 58%;
+  padding: 48px 120px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.wd-page-nav__back {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  color: #111111;
+  transition: color 0.3s;
+}
+
+.wd-page-nav__back:hover {
+  color: #111111;
+}
+
+.wd-page-nav__pager {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.wd-page-nav__current {
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: #111111;
+}
+
+.wd-page-nav__next {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  color: #111111;
+  transition: color 0.3s;
+}
+
+.wd-page-nav__back:hover,
+.wd-page-nav__next:hover {
+  color: #ff3d1b;
+}
+
+.wd-page-nav__back.point-none,
+.wd-page-nav__next.point-none {
+  opacity: 0;
+  pointer-events: none;
+}
+/* ============================================================
+   レスポンシブ
+============================================================ */
+@media (max-width: 1280px) {
+  .wd-title-section__inner,
+  .wd-info-section__inner {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: auto;
+  }
+
+  .wd-info-section {
+    padding: 80px 60px;
+  }
+  .wd-hero-section {
+    padding: 30px 30px;
+  }
+  .wd-info-section__inner {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .wd-info-table {
+    width: 100%;
+  }
+  .wd-overview {
+    width: 100%;
+  }
+
+  .wd-info-section__hero-img {
+    width: 100%;
+    height: auto;
+  }
+  .wd-info-section__hero-img-half {
+    width: 50%;
+    height: auto;
+    aspect-ratio: 485 / 540;
+  }
+
+  .wd-showcase-wrap {
+    padding: 80px 60px;
+  }
+
+  .wd-showcase {
+    width: 100%;
+  }
+
+  .wd-showcase__images {
+    flex-direction: column;
+  }
+
+  .wd-showcase__img-pc,
+  .wd-showcase__img-sp {
+    width: 100%;
+  }
+
+  .wd-page-nav {
+    padding: 40px 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wd-title-section__inner {
+    padding: 40px 24px 0;
+  }
+  .wd-title-section__title-wrap {
+    border-left: 4px solid #ff3d1b;
+    padding-left: 16px;
+  }
+  .wd-title-section__title {
+    font-size: clamp(38px, 8vw, 60px);
+  }
+
+  .wd-title-section__client-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .wd-title-section__company,
+  .wd-title-section__project-name,
+  .wd-overview__text {
+    font-size: 16px;
+  }
+
+  .wd-info-section {
+    padding: 60px 24px 48px;
+    margin-top: -60px;
+  }
+
+  .wd-info-table__row {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .wd-info-table__label {
+    width: auto;
+    color: #ff3d1b;
+  }
+
+  .wd-showcase__name {
+    font-size: clamp(30px, 6vw, 40px);
+  }
+
+  .wd-showcase__url {
+    font-size: 14px;
+  }
+
+  .wd-showcase-wrap {
+    padding: 60px 24px;
+  }
+
+  .wd-showcase {
+    gap: 40px;
+  }
+
+  .wd-point-section {
+    padding: 40px 30px;
+  }
+
+  .wd-page-nav {
+    width: 100%;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 32px 24px;
+  }
+}

@@ -1,13 +1,205 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Web designer & developer portfolio of undrflx.">
-  <link rel="canonical" href="https://undrflx.com/">
-  <title>undrflx</title>
-</head>
-<body>
-  <h1>Hello undrflx 🚀</h1>
-</body>
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNDRFLX | Designer who thinks like a Director.</title>
+    <meta name="description" content="デザインの精度で、ディレクションを実現する。JungHoon Shin のポートフォリオ。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/common.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <!-- ============================================================
+       HEADER  /  1440×120px / bg:#111111 / padding:40px 120px
+  ============================================================ -->
+    <header class="header">
+      <div class="header__inner">
+        <!-- Logo: Jost Bold 700, 20px, ls:10%, UPPERCASE, color:#FF3D1B -->
+        <a class="header__logo" href="index.html">UNDRFLX</a>
+        <!-- Nav: Jost Regular 400, 20px, ls:10%, color:#FFFFFF, gap:40px -->
+        <nav class="header__nav">
+          <a href="#works">Works</a>
+          <a href="#about">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============================================================
+         HERO  /  100vh / bg:#111111
+         Title: Jost ExtraBold Italic 800, 120px, UPPERCASE, #FF3D1B
+         Sub  : Jost Light 300, 24px, 150%lh, #E2E2E2
+         Frame: x:127 y:210 / width:1200px / col gap:40px
+    ============================================================ -->
+      <section class="hero">
+        <div class="hero__content">
+          <!-- ヒーロータイトル: 1行ずつマスクアニメーションで表示 -->
+          <h1 class="hero__title">
+            <span class="hero__title-line"><span class="hero__title-inner">Designer who thinks like&nbsp;a Director.</span></span>
+          </h1>
+          <!-- サブテキスト: フェードイン -->
+          <p class="hero__sub">デザインの精度で、ディレクションを実現する</p>
+        </div>
+
+        <!-- ============================================================
+           SCROLL INDICATOR (右下) / 縦棒 + 下降アニメーション
+      ============================================================ -->
+        <div class="hero__scroll-indicator">
+          <span class="hero__scroll-label">SCROLL</span>
+          <div class="hero__scroll-bar">
+            <div class="hero__scroll-line"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         CONTENTS WRAPPER  /  width:1200px / col gap:240px
+    ============================================================ -->
+      <div class="contents">
+        <!-- ==========================================================
+           WORKS SECTION  /  col gap:60px
+      ========================================================== -->
+        <section class="section-works" id="works">
+          <!-- sub-title: row align:flex-end gap:20px -->
+          <div class="sub-title" data-anim>
+            <div class="sub-title__head">
+              <!-- "01": Jost Bold 700, 46px, UPPERCASE, #FFFFFF -->
+              <span class="sub-title__num">01</span>
+              <!-- "Works": Jost Bold 700, 56px, #FF3D1B -->
+              <span class="sub-title__name">Works</span>
+            </div>
+            <!-- desc: Jost Regular 400, 18px, 150%lh, #E2E2E2 -->
+            <p class="sub-title__desc">課題解決と体験設計を軸に、企画から実装まで一貫して携わった制作実績です。</p>
+          </div>
+
+          <!-- Works grid: flex row wrap / gap:40px -->
+          <ul class="works-grid">
+            <!-- Card: 580px wide / col gap:10px / img:340px height -->
+            <li class="works-card" data-anim data-delay="0">
+              <a href="works/works02.html">
+                <!-- 画像をここに挿入: <img src="assets/images/works01.jpg" alt="作品名"> -->
+                <div class="works-card__img">
+                  <img src="./assets/images/works01_thumb.png" alt="光村図書 QRコード連携 学習補助サイト「広がる学び・深まる学び」" />
+                </div>
+                <!-- title: Jost Regular 400, 16px, 160%lh, #E2E2E2 -->
+                <p class="works-card__title">光村図書 QRコード連携 学習補助サイト「広がる学び・深まる学び」</p>
+              </a>
+            </li>
+
+            <li class="works-card" data-anim data-delay="100">
+              <a href="works/works02.html">
+                <div class="works-card__img">
+                  <img src="./assets/images/works02_thumb.png" alt="クレヨンしんちゃん ゲームプロモーションサイト" />
+                </div>
+                <p class="works-card__title">クレヨンしんちゃん ゲームプロモーションサイト</p>
+              </a>
+            </li>
+
+            <li class="works-card" data-anim data-delay="0">
+              <a href="works/works03.html">
+                <div class="works-card__img">
+                  <img src="./assets/images/works03_thumb.png" alt="HONDA アウトドアアクセサリーページ制作" />
+                </div>
+                <p class="works-card__title">HONDA アウトドアアクセサリーページ制作</p>
+              </a>
+            </li>
+
+            <li class="works-card" data-anim data-delay="100">
+              <a href="works/works04.html">
+                <div class="works-card__img">
+                  <img src="./assets/images/works04_thumb.png" alt="株式会社Retool コーポレートサイトリニューアル" />
+                </div>
+                <p class="works-card__title">株式会社Retool コーポレートサイトリニューアル</p>
+              </a>
+            </li>
+
+            <li class="works-card" data-anim data-delay="0">
+              <a href="works/works05.html">
+                <div class="works-card__img">
+                  <img src="./assets/images/works04_thumb.png" alt="株式会社All Right コーポレートサイトリニューアル" />
+                </div>
+                <p class="works-card__title">株式会社All Right コーポレートサイトリニューアル</p>
+              </a>
+            </li>
+
+            <li class="works-card" data-anim data-delay="100">
+              <a href="works/works06.html">
+                <div class="works-card__img">
+                  <img src="./assets/images/works05_thumb.png" alt="aiwa コーポレートサイトリニューアル" />
+                </div>
+                <p class="works-card__title">aiwa コーポレートサイトリニューアル</p>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ==========================================================
+           ABOUT SECTION  /  col gap:60px
+      ========================================================== -->
+        <section class="section-about" id="about">
+          <!-- sub-title -->
+          <div class="sub-title" data-anim>
+            <div class="sub-title__head">
+              <span class="sub-title__num">02</span>
+              <span class="sub-title__name">About</span>
+            </div>
+            <p class="sub-title__desc">
+              10年のウェブデザイン経験を基盤に、クライアントの課題を視覚言語で解決してきました。<br />デザイナーとしての精度と、ディレクターとしての俯瞰——その両方を持つ人間として、次のステージへ。
+            </p>
+          </div>
+
+          <!-- About body: row gap:93px -->
+          <div class="about-body" data-anim>
+            <!-- Left: col gap:30px -->
+            <div class="about-left">
+              <!-- Name: Jost ExtraBold Italic 800, 100px, right-align, #E1E1E1 -->
+              <p class="about-name">JungHoon Shin</p>
+              <!-- Bio: Jost Regular 400, 18px, 150%lh, #E2E2E2 -->
+              <p class="about-bio">申 政勲 / 1983. 8. 28</p>
+            </div>
+
+            <!-- Right: col gap:20px / width:410px -->
+            <div class="about-right">
+              <div class="about-row">
+                <!-- label: Jost SemiBold 600, 20px, 160%lh, #FF3D1B -->
+                <span class="about-row__label">Design</span>
+                <!-- value: Jost Regular 400, 18px, 160%lh, #E2E2E2 -->
+                <span class="about-row__value">Web Design UI/UX Design Graphic Design</span>
+              </div>
+
+              <div class="about-row">
+                <span class="about-row__label">Tools</span>
+                <span class="about-row__value">Figma・Adobe XD・Photoshop・Illustrator<br />WordPress・Movable Type<br />Backlog・Jira Slack</span>
+              </div>
+
+              <div class="about-row">
+                <span class="about-row__label">Language</span>
+                <span class="about-row__value">韓国語・日本語 N1</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- /.contents -->
+    </main>
+
+    <!-- ============================================================
+       FOOTER  /  1440×120px / bg:#242424
+       Logo: Jost Bold 700, 20px, ls:10%, UPPERCASE, #FF3D1B  x:120 y:50
+       Copy: Jost Light 300, 14px, ls:10%, UPPERCASE, #FFFFFF  x:1120 y:53
+  ============================================================ -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <span class="footer__logo">UNDRFLX</span>
+        <span class="footer__copy">© 2026 UNDRFLX portfolio</span>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="assets/main.js"></script>
+  </body>
 </html>

@@ -1,0 +1,639 @@
+/* ============================================================
+   UNDRFLX Portfolio — style.css
+   Figma完全忠実実装 / File: Q5ktdUkDx0Ue7ueVhw9TgN
+
+   カラー:
+     #111111  背景 (fill_LWCG69)
+     #FF3D1B  メインカラー (color_main / fill_J9ZYLE)
+     #FFFFFF  ナビ・コピー (fill_Y8QTPM)
+     #E2E2E2  本文テキスト (fill_CEXANJ)
+     #E1E1E1  About名前 (fill_H4YW2E)
+     #242424  フッター背景 (fill_1MDDTI)
+
+   フォント: Jost (Google Fonts)
+   ページ幅: 1440px / コンテンツ幅: 1200px / 余白: 120px
+============================================================ */
+
+/* ---- 基本 -------------------------------------------------- */
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Jost", sans-serif;
+  background-color: #111111;
+  color: #e2e2e2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================================================
+   HEADER
+   Figma: 1440×120px / bg:#111111 / padding:40px 120px
+   flex row / justify:space-between / align:center
+============================================================ */
+.header {
+  width: 100%;
+  height: 120px;
+  background-color: #111111;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.header__inner {
+  width: 1440px;
+  max-width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo: Jost Bold 700 / 20px / ls:10% / UPPERCASE / #FF3D1B */
+.header__logo {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ff3d1b;
+}
+
+/* Nav: row / gap:40px / Jost Regular 400 / 20px / ls:10% / #FFFFFF */
+.header__nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+}
+
+.header__nav a {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  padding: 10px;
+}
+
+.header__nav a:hover {
+  opacity: 0.6;
+}
+
+/* ============================================================
+   HERO
+   100vh / bg:#111111
+   Title frame: x:127 y:210 / width:1200px / col gap:40px
+============================================================ */
+.hero {
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  background-color: #111111;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.hero__content {
+  position: absolute;
+  left: 127px;
+  top: 210px;
+  width: 1200px;
+  max-width: calc(100% - 254px);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Hero title: Jost ExtraBold Italic 800 / 120px / 100%lh / UPPERCASE / #FF3D1B */
+.hero__title {
+  font-weight: 800;
+  font-style: italic;
+  font-size: 120px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #ff3d1b;
+  margin: 0;
+}
+
+/* アニメーション用マスク構造 */
+.hero__title-line {
+  display: block;
+  overflow: hidden;
+}
+
+.hero__title-inner {
+  display: block;
+  transform: translateY(110%);
+  /* GSAPで translateY(0) へ */
+}
+
+/* Hero subtitle: Jost Light 300 / 24px / 150%lh / #E2E2E2 */
+.hero__sub {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 1.5;
+  color: #e2e2e2;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  /* GSAPで opacity:1, translateY:0 へ */
+}
+
+/* ============================================================
+   SCROLL INDICATOR  /  右下固定 / 縦棒 + 下降アニメーション
+============================================================ */
+.hero__scroll-indicator {
+  position: absolute;
+  right: 40px;
+  bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  /* GSAPで opacity:1 へ */
+}
+
+.hero__scroll-label {
+  font-weight: 300;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.hero__scroll-bar {
+  width: 1px;
+  height: 80px;
+  background-color: rgba(255, 255, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__scroll-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background-color: #ff3d1b;
+  animation: scrollDown 1.8s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(150%);
+  }
+  100% {
+    transform: translateY(300%);
+  }
+}
+
+/* ============================================================
+   CONTENTS WRAPPER
+   Figma: width:1200px / col / gap:240px
+   ページ中央寄せ (margin: 0 auto)
+============================================================ */
+.contents {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 240px;
+  padding-bottom: 80px;
+}
+
+/* ============================================================
+   SUB-TITLE コンポーネント
+   Figma: col / gap:20px / width:1200px
+============================================================ */
+.sub-title {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* head: row / align:flex-end / gap:20px */
+.sub-title__head {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+/* 番号 "01": Jost Bold 700 / 46px / UPPERCASE / #FFFFFF */
+.sub-title__num {
+  font-weight: 700;
+  font-size: 46px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+/* タイトル "Works": Jost Bold 700 / 56px / #FF3D1B */
+.sub-title__name {
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1;
+  color: #ff3d1b;
+}
+
+/* 説明文: Jost Regular 400 / 18px / 150%lh / #E2E2E2 */
+.sub-title__desc {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #e2e2e2;
+  margin: 0;
+}
+
+/* ============================================================
+   WORKS セクション
+   Figma: col / gap:60px
+============================================================ */
+.section-works {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Works グリッド: flex row / wrap / gap:40px */
+.works-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* Works カード: width:580px / col / gap:10px */
+.works-card {
+  width: 580px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.works-card a {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 画像エリア: height:340px */
+.works-card__img {
+  width: 100%;
+  height: 340px;
+  background-color: #222222; /* 画像未設定時のプレースホルダー色 */
+  overflow: hidden;
+  position: relative;
+}
+
+/* ---- 画像の挿入方法 ----------------------------------------
+   <img src="assets/images/works01.jpg" alt="作品名">
+   をdiv.works-card__imgの中に入れてください
+------------------------------------------------------------- */
+.works-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* src=""が空のとき非表示 */
+}
+
+.works-card__img img:not([src]),
+.works-card__img img[src=""] {
+  display: none;
+}
+
+/* 画像未設定時のプレースホルダーテキスト */
+.works-card__img::after {
+  content: attr(data-label);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.15);
+}
+
+/* カードタイトル: Jost Regular 400 / 16px / 160%lh / #E2E2E2 */
+.works-card__title {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #e2e2e2;
+  margin: 0;
+}
+
+/* ============================================================
+   ABOUT セクション
+   Figma: col / gap:60px
+============================================================ */
+.section-about {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* About body: row / gap:93px */
+.about-body {
+  display: flex;
+  flex-direction: row;
+  gap: 93px;
+}
+
+/* 左カラム: col / gap:30px */
+.about-left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex: 1;
+}
+
+/* 名前: Jost ExtraBold Italic 800 / 100px / right-align / #E1E1E1 */
+.about-name {
+  font-weight: 800;
+  font-style: italic;
+  font-size: 100px;
+  line-height: 1;
+  text-align: right;
+  color: #e1e1e1;
+  margin: 0;
+}
+
+/* バイオ: Jost Regular 400 / 18px / 150%lh / #E2E2E2 */
+.about-bio {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #e2e2e2;
+  margin: 0;
+}
+
+/* 右カラム: col / gap:20px / width:410px */
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 410px;
+  flex-shrink: 0;
+}
+
+/* 各行: col / gap:10px (layout_2F4S45) */
+.about-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ラベル: Jost SemiBold 600 / 20px / 160%lh / #FF3D1B */
+.about-row__label {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #ff3d1b;
+}
+
+/* バリュー: Jost Regular 400 / 18px / 160%lh / #E2E2E2 */
+.about-row__value {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #e2e2e2;
+}
+
+/* ============================================================
+   FOOTER
+   Figma: 1440×120px / bg:#242424
+   Logo x:120 y:50 / Copy x:1120 y:53
+============================================================ */
+.footer {
+  width: 100%;
+  height: 120px;
+  background-color: #242424;
+  position: relative;
+}
+
+.footer__inner {
+  width: 1440px;
+  max-width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo: Jost Bold 700 / 20px / ls:10% / UPPERCASE / #FF3D1B */
+.footer__logo {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ff3d1b;
+}
+
+/* Copy: Jost Light 300 / 14px / ls:10% / UPPERCASE / #FFFFFF */
+.footer__copy {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+/* ============================================================
+   SCROLL ANIMATION  /  GSAPで .is-visible を付与
+============================================================ */
+[data-anim] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-anim].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   レスポンシブ (Tablet / Mobile)
+   Figmaはデスクトップ1440px基準。スマホ対応を追加。
+============================================================ */
+
+/* --- Tablet: 1200px以下 ------------------------------------- */
+@media (max-width: 1280px) {
+  .header__inner,
+  .footer__inner {
+    padding: 0 60px;
+  }
+
+  .hero__content {
+    left: 60px;
+    width: calc(100% - 120px);
+  }
+
+  .hero__title {
+    font-size: 80px;
+  }
+
+  .contents {
+    width: calc(100% - 120px);
+    padding: 0 60px 80px;
+    box-sizing: content-box;
+  }
+}
+
+/* --- Mobile: 768px以下 -------------------------------------- */
+@media (max-width: 768px) {
+  /* Header */
+  .header {
+    height: 72px;
+  }
+
+  .header__inner {
+    padding: 0 24px;
+  }
+
+  .header__logo {
+    font-size: 16px;
+  }
+
+  .header__nav {
+    gap: 20px;
+  }
+
+  .header__nav a {
+    font-size: 14px;
+  }
+
+  /* Hero */
+  .hero {
+    height: auto;
+    min-height: 100svh;
+    padding-top: 72px;
+  }
+
+  .hero__content {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    max-width: 100%;
+    padding: 80px 24px 60px;
+    gap: 24px;
+  }
+
+  .hero__title {
+    font-size: clamp(40px, 10vw, 72px);
+  }
+
+  .hero__scroll-indicator {
+    right: 16px;
+    bottom: 32px;
+  }
+
+  .hero__sub {
+    font-size: 16px;
+  }
+
+  /* Contents */
+  .contents {
+    width: 100%;
+    padding: 0 24px 60px;
+    gap: 100px;
+    box-sizing: border-box;
+  }
+
+  /* Sub-title */
+  .sub-title__num {
+    font-size: 28px;
+  }
+
+  .sub-title__name {
+    font-size: 36px;
+  }
+
+  .sub-title__desc {
+    font-size: 14px;
+  }
+
+  /* Works grid */
+  .works-grid {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .works-card {
+    width: 100%;
+  }
+
+  .works-card__img {
+    height: 220px;
+  }
+
+  /* About */
+  .about-body {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .about-name {
+    font-size: clamp(40px, 10vw, 80px);
+    text-align: left;
+  }
+
+  .about-right {
+    width: 100%;
+  }
+
+  .about-row__label {
+    font-size: 16px;
+  }
+
+  .about-row__value {
+    font-size: 14px;
+  }
+
+  /* Footer */
+  .footer {
+    height: auto;
+    padding: 32px 24px;
+  }
+
+  .footer__inner {
+    padding: 0;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .footer__copy {
+    font-size: 11px;
+  }
+}
