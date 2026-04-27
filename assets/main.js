@@ -86,7 +86,107 @@ function runHeroAnimation() {
   }, interval);
 })();
 
+// ============================================================
+// HERO CANVAS  /  ドット波アニメーション
+//   波のような呼吸 + PC はマウス反応 / タブレット・モバイルは波のみ
+// ============================================================
+function initHeroCanvas() {
+  const canvas = document.getElementById('heroCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  // CSS 変数から設定値を読み込む
+  const css      = getComputedStyle(document.documentElement);
+  const _color   = css.getPropertyValue('--dot-color').trim();
+  const _opacity = css.getPropertyValue('--dot-opacity').trim();
+  const _size    = css.getPropertyValue('--dot-base-size').trim();
+  const _spacing = css.getPropertyValue('--dot-spacing').trim();
+
+  const DOT_COLOR = `rgba(${_color}, ${_opacity})`;
+  const BASE_R    = parseFloat(_size)    || 1.4;
+  const SPACING   = parseFloat(_spacing) || 28;
+
+  const WAVE_AMP    = 2.6;
+  const WAVE_SPEED  = 0.7;
+  const WAVE_FREQ_X = 0.018;
+  const WAVE_FREQ_Y = 0.018;
+  const MOUSE_R     = 160;
+  const MOUSE_BOOST = 9;
+
+  let dots  = [];
+  let mouse = { x: -9999, y: -9999 };
+  let isPC  = window.innerWidth >= 1025;
+
+  function buildDots() {
+    dots = [];
+    const cols = Math.ceil(canvas.width  / SPACING) + 2;
+    const rows = Math.ceil(canvas.height / SPACING) + 2;
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        dots.push({
+          x:     c * SPACING,
+          y:     r * SPACING,
+          phase: Math.random() * Math.PI * 2,
+        });
+      }
+    }
+  }
+
+  function resize() {
+    canvas.width  = canvas.offsetWidth  || window.innerWidth;
+    canvas.height = canvas.offsetHeight || window.innerHeight;
+    isPC = window.innerWidth >= 1025;
+    buildDots();
+  }
+
+  function animate(t) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const now = t * 0.001 * WAVE_SPEED;
+
+    for (let i = 0, len = dots.length; i < len; i++) {
+      const d    = dots[i];
+      const wave = Math.sin(now + d.x * WAVE_FREQ_X + d.y * WAVE_FREQ_Y + d.phase) * WAVE_AMP;
+      let r      = BASE_R + wave;
+
+      if (isPC) {
+        const dx   = d.x - mouse.x;
+        const dy   = d.y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < MOUSE_R) r += (1 - dist / MOUSE_R) * MOUSE_BOOST;
+      }
+
+      r = Math.max(0.3, r);
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, r, 0, Math.PI * 2);
+      ctx.fillStyle = DOT_COLOR;
+      ctx.fill();
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  // マウス追跡（PC のみ）
+  document.addEventListener('mousemove', e => {
+    if (!isPC) return;
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+
+  document.addEventListener('mouseleave', () => {
+    mouse.x = -9999;
+    mouse.y = -9999;
+  });
+
+  window.addEventListener('resize', resize);
+  resize();
+  requestAnimationFrame(animate);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+
+  // Canvas ドットアニメーション起動
+  initHeroCanvas();
 
   // ============================================================
   // 1. スクロールアニメーション  [data-anim] 要素

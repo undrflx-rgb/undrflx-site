@@ -52,6 +52,14 @@
   transition: width 0.05s linear;
 }
 
+/* ---- ドットアニメーション設定値（CSS変数） ----------------- */
+:root {
+  --dot-color: 255, 61, 27; /* RGB値 (#FF3D1B) */
+  --dot-opacity: 0.36; /* 透明度 0〜1 */
+  --dot-base-size: 1.2; /* ドット基本サイズ (px) */
+  --dot-spacing: 28; /* ドット間隔 (px) */
+}
+
 /* ---- 基本 -------------------------------------------------- */
 html {
   font-size: 16px;
@@ -154,6 +162,17 @@ a {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  z-index: 1; /* canvas より前面 */
+}
+
+/* Canvas: 全面 / コンテンツの背面 / ポインター無効 */
+.hero__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Hero title: Jost ExtraBold Italic 800 / 120px / 100%lh / UPPERCASE / #FF3D1B */
@@ -584,7 +603,7 @@ a {
   .hero__content {
     position: relative;
     left: auto;
-    top: auto;
+    top: 28vw;
     width: auto;
     max-width: 100%;
     padding: 80px 24px 60px;
@@ -592,7 +611,7 @@ a {
   }
 
   .hero__title {
-    font-size: clamp(40px, 10vw, 72px);
+    font-size: clamp(62px, 10vw, 72px);
   }
 
   .hero__scroll-indicator {

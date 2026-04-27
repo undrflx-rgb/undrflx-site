@@ -295,6 +295,12 @@ body {
   align-self: stretch;
 }
 
+.wd-showcase__sub-title .gray-text {
+  line-height: 1.5;
+  color: #7e7e7e;
+  margin: 0;
+}
+
 /* 作品タイトル: Jost ExtraBold Italic 800 / 48px / 100%lh / #1D1D1D (style_R9YTQO) */
 .wd-showcase__name {
   font-weight: 800;
@@ -382,6 +388,15 @@ body {
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
+}
+
+.btn-topWorks {
+  color: #ff3d1b;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+.btn-topWorks:hover {
+  opacity: 0.7;
 }
 
 .wd-page-nav__back {
