@@ -155,13 +155,13 @@ a {
 .hero__content {
   position: absolute;
   left: 127px;
-  /* top: 210px; */
-  top: 22vw;
+  top: 50%;
   width: 1200px;
   max-width: calc(100% - 254px);
   display: flex;
   flex-direction: column;
   gap: 40px;
+  transform: translateY(-50%);
   z-index: 1; /* canvas より前面 */
 }
 
@@ -606,9 +606,8 @@ a {
   }
 
   .hero__content {
-    position: relative;
     left: auto;
-    top: 14vw;
+    /* top: 14vw; */
     width: auto;
     max-width: 100%;
     padding: 80px 24px 60px;
