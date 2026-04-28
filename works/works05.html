@@ -4,26 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Works 05 — 株式会社All Right | UNDRFLX</title>
-    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
-    <link rel="apple-touch-icon" href="assets/images/favicon.png" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="../assets/images/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/common.css" />
-    <link rel="stylesheet" href="../assets/style.css" />
-    <link rel="stylesheet" href="../assets/works-detail.css" />
+    <link rel="stylesheet" href="../assets/css/" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/works-detail.css" />
   </head>
   <body>
-    <!-- ============================================================
-       HEADER  /  bg:#111111 / 1440×120px
-       共通ヘッダー (index.htmlと同一)
-  ============================================================ -->
     <header class="header">
       <div class="header__inner">
         <a class="header__logo" href="../index.html">UNDRFLX</a>
         <nav class="header__nav">
           <a href="../index.html#works">Works</a>
           <a href="../index.html#about">About</a>
+          <!-- 言語切替ボタン -->
+          <button class="lang-btn" id="langBtn" aria-label="언어 전환 / 言語切替">
+            <span class="lang-btn__item" data-lang-item="ja">JP</span>
+            <span class="lang-btn__sep">/</span>
+            <span class="lang-btn__item" data-lang-item="ko">KO</span>
+          </button>
         </nav>
       </div>
     </header>
@@ -39,8 +41,8 @@
           </div>
 
           <div class="wd-title-section__client-row">
-            <span class="wd-title-section__company">ネオスが株式会社</span>
-            <span class="wd-title-section__project-name">コーポレートサイトリニューアル</span>
+            <span class="wd-title-section__company" data-ja="ネオスが株式会社" data-ko="네오스주식회사">ネオスが株式会社</span>
+            <span class="wd-title-section__project-name" data-ja="コーポレートサイトリニューアル" data-ko="코퍼레이트 사이트 리뉴얼">コーポレートサイトリニューアル</span>
           </div>
         </div>
       </section>
@@ -56,33 +58,45 @@
           <dl class="wd-info-table">
             <!-- 担当役割 -->
             <div class="wd-info-table__row">
-              <dt class="wd-info-table__label">担当役割</dt>
-              <dd class="wd-info-table__value">Webデザイン・コーディング・運用デレクション・運用</dd>
+              <dt class="wd-info-table__label" data-ja="担当役割" data-ko="담당 업무">担当役割</dt>
+              <dd class="wd-info-table__value" data-ja="Webデザイン ･ コーディング ･ 運用デレクション ･ 運用" data-ko="Web디자인 · 퍼블리싱 · 운영 디렉션 · 운영">
+                Webデザイン ･ コーディング ･ 運用デレクション ･ 運用
+              </dd>
             </div>
 
-            <!-- 制作年・期間 -->
+            <!-- 制作年 ･ 期間 -->
             <div class="wd-info-table__row">
-              <dt class="wd-info-table__label">制作年・期間</dt>
-              <dd class="wd-info-table__value">2024年 8月 ~ 1月　3カ月</dd>
+              <dt class="wd-info-table__label" data-ja="制作年 ･ 期間" data-ko="제작 연도 ･ 기간">制作年 ･ 期間</dt>
+              <dd class="wd-info-table__value" data-ja="2024年 8月 ~ 1月　3カ月" data-ko="2024년 8월 ~ 1월　3개월">2024年 8月 ~ 1月　3カ月</dd>
             </div>
 
             <!-- チーム規模 -->
             <div class="wd-info-table__row">
-              <dt class="wd-info-table__label">チーム規模</dt>
+              <dt class="wd-info-table__label" data-ja="チーム規模" data-ko="팀 규모">チーム規模</dt>
               <dd class="wd-info-table__value">
-                <!-- Figma: layout_0N9J4O / col / gap:4px
-                   各行: 役職(160px) + 人数 / layout_W2LT9O -->
-                <span class="wd-team-row"><span class="wd-team-row__role">ディレクター</span><span class="wd-team-row__count">1名</span></span>
-                <span class="wd-team-row"><span class="wd-team-row__role">Webデザイナー</span><span class="wd-team-row__count">1名</span></span>
-                <span class="wd-team-row"><span class="wd-team-row__role">コーダー</span><span class="wd-team-row__count">1名</span></span>
-                <span class="wd-team-row"><span class="wd-team-row__role">システムエンジニア</span><span class="wd-team-row__count">1名</span></span>
+                <span class="wd-team-row">
+                  <span class="wd-team-row__role" data-ja="ディレクター" data-ko="디렉터">ディレクター</span>
+                  <span class="wd-team-row__count" data-ja="1名" data-ko="1명">1名</span>
+                </span>
+                <span class="wd-team-row">
+                  <span class="wd-team-row__role" data-ja="Webデザイナー" data-ko="Web디자이너">Webデザイナー</span>
+                  <span class="wd-team-row__count" data-ja="1名" data-ko="1명">1名</span>
+                </span>
+                <span class="wd-team-row">
+                  <span class="wd-team-row__role" data-ja="コーダー" data-ko="퍼블리셔">コーダー</span>
+                  <span class="wd-team-row__count" data-ja="1名" data-ko="1명">1名</span>
+                </span>
+                <span class="wd-team-row">
+                  <span class="wd-team-row__role" data-ja="システムエンジニア" data-ko="시스템엔지니어">システムエンジニア</span>
+                  <span class="wd-team-row__count" data-ja="1名" data-ko="1명">1名</span>
+                </span>
               </dd>
             </div>
 
             <!-- 使用ツール -->
             <div class="wd-info-table__row">
-              <dt class="wd-info-table__label">使用ツール</dt>
-              <dd class="wd-info-table__value">Movable Type・Figma・Illustrator・Photoshop・HTML・CSS・JavaScript</dd>
+              <dt class="wd-info-table__label" data-ja="使用ツール" data-ko="사용 툴">使用ツール</dt>
+              <dd class="wd-info-table__value">Movable Type ･ Figma ･ Illustrator ･ Photoshop ･ HTML ･ CSS ･ JavaScript</dd>
             </div>
           </dl>
           <!-- /.wd-info-table -->
@@ -91,9 +105,13 @@
             <div class="wd-overview__head">
               <span class="wd-overview__title">Overview</span>
             </div>
-            <p class="wd-overview__text">
-              コーポレートサイトのMovable
-              Typeを用いたリニューアルプロジェクトを、ワイヤーフレーム設計から実装・運用まで1名で一貫して担当。UI全面改善により視認性・訴求力の向上を実現しました。単独でプロジェクト全体を管理する経験として、制作スピードと品質のバランスを取りながら安定した成果物を納品しました。
+            <p
+              class="wd-overview__text"
+              data-ja-html="コーポレートサイトのMovable Typeを用いたリニューアルプロジェクトを、ワイヤーフレーム設計から実装 ･ 運用まで1名で一貫して担当。UI全面改善により視認性 ･ 訴求力の向上を実現しました。単独でプロジェクト全体を管理する経験として、制作スピードと品質のバランスを取りながら安定した成果物を納品しました。"
+              data-ko-html="Movable Type 기반 코퍼레이트 사이트 리뉴얼 프로젝트를 와이어프레임 설계부터 구현·운영까지 1인 단독으로 전 과정 수행했습니다.&lt;br /&gt;UI 전면 개선을 통해 가독성과 전달력을 향상시켰으며, 프로젝트 전체를 단독으로 관리하는 과정에서 제작 속도와 품질의 균형을 유지하며 안정적으로 결과물을 납품했습니다."
+            >
+              コーポレートサイトのMovable Typeを用いたリニューアルプロジェクトを、ワイヤーフレーム設計から実装 ･ 運用まで1名で一貫して担当。UI全面改善により視認性 ･
+              訴求力の向上を実現しました。単独でプロジェクト全体を管理する経験として、制作スピードと品質のバランスを取りながら安定した成果物を納品しました。
             </p>
           </div>
           <!-- /.wd-overview -->
@@ -113,7 +131,6 @@
             <div class="wd-showcase__img-pc">
               <img src="../assets/images/works_allright_pc_01.png" alt="PC表示" />
             </div>
-
             <div class="wd-showcase__img-sp">
               <img src="../assets/images/works_allright_sp_01.png" alt="SP表示" />
             </div>
@@ -124,7 +141,6 @@
             <div class="wd-showcase__img-pc">
               <img src="../assets/images/works_allright_pc_02.png" alt="PC表示" />
             </div>
-
             <div class="wd-showcase__img-sp">
               <img src="../assets/images/works_allright_sp_02.png" alt="SP表示" />
             </div>
@@ -142,9 +158,15 @@
               <span class="wd-overview__title">Strategy</span>
             </div>
             <ul class="point-list">
-              <li>着手前にサイト全体の構造・コンテンツを整理し、改善優先度を明確化</li>
-              <li>ワイヤーフレーム段階でクライアントとの認識を合わせ、後工程での手戻りを防止</li>
-              <li>Movable Typeのテンプレート設計を最適化し、更新作業の工数を削減</li>
+              <li data-ja="着手前にサイト全体の構造 ･ コンテンツを整理し、改善優先度を明確化" data-ko="착수 전 사이트 구조 및 콘텐츠를 재정리하여 개선 우선순위 명확화">
+                着手前にサイト全体の構造 ･ コンテンツを整理し、改善優先度を明確化
+              </li>
+              <li data-ja="ワイヤーフレーム段階でクライアントとの認識を合わせ、後工程での手戻りを防止" data-ko="와이어프레임 단계에서 클라이언트와 인식을 일치시켜 후속 단계에서의 수정 리스크 최소화">
+                ワイヤーフレーム段階でクライアントとの認識を合わせ、後工程での手戻りを防止
+              </li>
+              <li data-ja="Movable Typeのテンプレート設計を最適化し、更新作業の工数を削減" data-ko="Movable Type 템플릿 구조를 최적화하여 콘텐츠 업데이트 공수 절감">
+                Movable Typeのテンプレート設計を最適化し、更新作業の工数を削減
+              </li>
             </ul>
           </div>
 
@@ -153,33 +175,35 @@
               <span class="wd-overview__title">Key Contributions & Results</span>
             </div>
             <ul class="point-list">
-              <li>1名でワイヤー設計・デザイン・実装・運用を一貫して担当し、全工程の完全掌握を実現</li>
-              <li>UI全面改善により、視認性・訴求力の向上を達成</li>
-              <li>制作スピードと品質を両立し、納期内に安定したアウトプットを納品</li>
+              <li
+                data-ja="1名でワイヤー設計 ･ デザイン ･ 実装 ･ 運用を一貫して担当し、全工程の完全掌握を実現"
+                data-ko="와이어 설계 · 디자인 · 퍼블리싱 · 운영까지 전 과정을 1인으로 수행, 전체 프로세스 완전 관리"
+              >
+                1名でワイヤー設計 ･ デザイン ･ 実装 ･ 運用を一貫して担当し、全工程の完全掌握を実現
+              </li>
+              <li data-ja="UI全面改善により、視認性 ･ 訴求力の向上を達成" data-ko="UI 전면 개선을 통해 가독성 및 콘텐츠 전달력 향상">UI全面改善により、視認性 ･ 訴求力の向上を達成</li>
+              <li data-ja="制作スピードと品質を両立し、納期内に安定したアウトプットを納品" data-ko="제작 속도와 품질을 동시에 확보하며 일정 내 안정적인 결과물 납품">
+                制作スピードと品質を両立し、納期内に安定したアウトプットを納品
+              </li>
             </ul>
           </div>
           <!-- /.wd-overview -->
         </div>
         <!-- /.wd-info-section__inner -->
+        <div class="btn-works">
+          <a href="../index.html#works" class="btn-topWorks">UNDRFLX Works</a>
+        </div>
       </section>
 
-      <!-- ============================================================
-         PAGE NAVIGATION  /  前後ページリンク
-    ============================================================ -->
       <nav class="wd-page-nav">
         <a href="works04.html" class="wd-page-nav__back">← Prev Works</a>
-        <a href="../index.html#works" class="btn-topWorks">UNDRFLX Works</a>
         <div class="wd-page-nav__pager">
           <span class="wd-page-nav__current">05 / 06</span>
-          <!-- 次のWorksページ: 他ページ作成後にhrefを更新してください -->
           <a href="works06.html" class="wd-page-nav__next">Next Work →</a>
         </div>
       </nav>
     </main>
 
-    <!-- ============================================================
-       FOOTER  /  bg:#242424 / 共通フッター
-  ============================================================ -->
     <footer class="footer">
       <div class="footer__inner">
         <span><a href="../index.html" class="footer__logo">UNDRFLX</a></span>
@@ -189,6 +213,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="../assets/main.js"></script>
+    <script src="../assets/js/main.js"></script>
   </body>
 </html>

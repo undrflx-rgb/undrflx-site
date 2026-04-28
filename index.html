@@ -10,8 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/common.css" />
-    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <!-- ============================================================
@@ -35,6 +35,12 @@
         <nav class="header__nav">
           <a href="#works">Works</a>
           <a href="#about">About</a>
+          <!-- 言語切替ボタン -->
+          <button class="lang-btn" id="langBtn" aria-label="언어 전환 / 言語切替">
+            <span class="lang-btn__item" data-lang-item="ja">JP</span>
+            <span class="lang-btn__sep">/</span>
+            <span class="lang-btn__item" data-lang-item="ko">KO</span>
+          </button>
         </nav>
       </div>
     </header>
@@ -56,7 +62,7 @@
             <span class="hero__title-line"><span class="hero__title-inner">Designer who thinks like&nbsp;a Director.</span></span>
           </h1>
           <!-- サブテキスト: フェードイン -->
-          <p class="hero__sub">デザインの精度で、ディレクションを実現する</p>
+          <p class="hero__sub" data-ja="デザインの精度で、ディレクションを実現する" data-ko="디자인의 정밀도로, 디렉션을 실현한다">デザインの精度で、ディレクションを実現する</p>
         </div>
 
         <!-- ============================================================
@@ -87,7 +93,13 @@
               <span class="sub-title__name">Works</span>
             </div>
             <!-- desc: Jost Regular 400, 18px, 150%lh, #E2E2E2 -->
-            <p class="sub-title__desc">課題解決と体験設計を軸に、企画から実装まで一貫して携わった制作実績です。</p>
+            <p
+              class="sub-title__desc"
+              data-ja="課題解決と体験設計を軸に、企画から実装まで一貫して携わった制作実績です。"
+              data-ko="과제 해결과 경험 설계를 축으로, 기획부터 구현까지 일관되게 참여한 제작 실적입니다."
+            >
+              課題解決と体験設計を軸に、企画から実装まで一貫して携わった制作実績です。
+            </p>
           </div>
 
           <!-- Works grid: flex row wrap / gap:40px -->
@@ -97,10 +109,12 @@
               <a href="works/works01.html">
                 <!-- 画像をここに挿入: <img src="assets/images/works01.jpg" alt="作品名"> -->
                 <div class="works-card__img">
-                  <img src="./assets/images/works01_thumb.png" alt="光村図書 QRコード連携 学習補助サイト「広がる学び・深まる学び」" />
+                  <img src="./assets/images/works01_thumb.png" alt="光村図書 QRコード連携 学習補助サイト「広がる学び ･ 深まる学び」" />
                 </div>
                 <!-- title: Jost Regular 400, 16px, 160%lh, #E2E2E2 -->
-                <p class="works-card__title">光村図書 QRコード連携 学習補助サイト「広がる学び・深まる学び」</p>
+                <p class="works-card__title" data-ja="光村図書 QRコード連携 学習補助サイト「広がる学び ･ 深まる学び」" data-ko="미쓰무라도서 QR코드 연계 학습보조사이트「넓어지는 배움·깊어지는 배움」">
+                  光村図書 QRコード連携 学習補助サイト「広がる学び ･ 深まる学び」
+                </p>
               </a>
             </li>
 
@@ -109,7 +123,7 @@
                 <div class="works-card__img">
                   <img src="./assets/images/works02_thumb.png" alt="クレヨンしんちゃん ゲームプロモーションサイト" />
                 </div>
-                <p class="works-card__title">クレヨンしんちゃん ゲームプロモーションサイト</p>
+                <p class="works-card__title" data-ja="クレヨンしんちゃん ゲームプロモーションサイト" data-ko="크레용 신짱 게임 프로모션 사이트">クレヨンしんちゃん ゲームプロモーションサイト</p>
               </a>
             </li>
 
@@ -118,7 +132,7 @@
                 <div class="works-card__img">
                   <img src="./assets/images/works03_thumb.png" alt="HONDA アウトドアアクセサリーページ制作" />
                 </div>
-                <p class="works-card__title">HONDA アウトドアアクセサリーページ制作</p>
+                <p class="works-card__title" data-ja="HONDA アウトドアアクセサリーページ制作" data-ko="HONDA 아웃도어 액세서리 페이지 제작">HONDA アウトドアアクセサリーページ制作</p>
               </a>
             </li>
 
@@ -127,7 +141,9 @@
                 <div class="works-card__img">
                   <img src="./assets/images/works04_thumb.png" alt="株式会社Retool コーポレートサイトリニューアル" />
                 </div>
-                <p class="works-card__title">株式会社Retool コーポレートサイトリニューアル</p>
+                <p class="works-card__title" data-ja="株式会社Retool コーポレートサイトリニューアル" data-ko="Retool 주식회사 코퍼레이트 사이트 리뉴얼">
+                  株式会社Retool コーポレートサイトリニューアル
+                </p>
               </a>
             </li>
 
@@ -136,7 +152,9 @@
                 <div class="works-card__img">
                   <img src="./assets/images/works05_thumb.png" alt="株式会社All Right コーポレートサイトリニューアル" />
                 </div>
-                <p class="works-card__title">株式会社All Right コーポレートサイトリニューアル</p>
+                <p class="works-card__title" data-ja="株式会社All Right コーポレートサイトリニューアル" data-ko="All Right 주식회사 코퍼레이트 사이트 리뉴얼">
+                  株式会社All Right コーポレートサイトリニューアル
+                </p>
               </a>
             </li>
 
@@ -145,7 +163,7 @@
                 <div class="works-card__img">
                   <img src="./assets/images/works06_thumb.png" alt="aiwa コーポレートサイトリニューアル" />
                 </div>
-                <p class="works-card__title">aiwa コーポレートサイトリニューアル</p>
+                <p class="works-card__title" data-ja="aiwa コーポレートサイトリニューアル" data-ko="aiwa 코퍼레이트 사이트 리뉴얼">aiwa コーポレートサイトリニューアル</p>
               </a>
             </li>
           </ul>
@@ -161,7 +179,11 @@
               <span class="sub-title__num">02</span>
               <span class="sub-title__name">About</span>
             </div>
-            <p class="sub-title__desc">
+            <p
+              class="sub-title__desc"
+              data-ja-html="10年のウェブデザイン経験を基盤に、クライアントの課題を視覚言語で解決してきました。&lt;br&gt;デザイナーとしての精度と、ディレクターとしての俯瞰——その両方を持つ人間として、次のステージへ。"
+              data-ko-html="10년간의 웹 디자인 경험을 기반으로, 클라이언트의 과제를 시각 언어로 해결해왔습니다.&lt;br&gt;디자이너로서의 디테일과 디렉터로서의 시야를 함께 갖춘 인재로서, 다음 단계로 나아가고자 합니다."
+            >
               10年のウェブデザイン経験を基盤に、クライアントの課題を視覚言語で解決してきました。<br />デザイナーとしての精度と、ディレクターとしての俯瞰——その両方を持つ人間として、次のステージへ。
             </p>
           </div>
@@ -173,7 +195,7 @@
               <!-- Name: Jost ExtraBold Italic 800, 100px, right-align, #E1E1E1 -->
               <p class="about-name">JungHoon Shin</p>
               <!-- Bio: Jost Regular 400, 18px, 150%lh, #E2E2E2 -->
-              <p class="about-bio">申 政勲 / 1983. 8. 28</p>
+              <p class="about-bio" data-ja="申 政勲 / 1983. 8. 28" data-ko="신정훈 / 1983. 8. 28">申 政勲 / 1983. 8. 28</p>
             </div>
 
             <!-- Right: col gap:20px / width:410px -->
@@ -187,12 +209,12 @@
 
               <div class="about-row">
                 <span class="about-row__label">Tools</span>
-                <span class="about-row__value">Figma・Adobe XD・Photoshop・Illustrator<br />WordPress・Movable Type<br />Backlog・Jira Slack</span>
+                <span class="about-row__value">Figma ･ Adobe XD ･ Photoshop ･ Illustrator<br />WordPress ･ Movable Type<br />Backlog ･ Jira Slack</span>
               </div>
 
               <div class="about-row">
                 <span class="about-row__label">Language</span>
-                <span class="about-row__value">韓国語・日本語 N1</span>
+                <span class="about-row__value" data-ja="韓国語 ･ 日本語 N1" data-ko="한국어 ･ 일본어 N1">韓国語 ･ 日本語 N1</span>
               </div>
             </div>
           </div>
@@ -215,6 +237,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="assets/main.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

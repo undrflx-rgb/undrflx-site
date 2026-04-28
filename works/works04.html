@@ -4,26 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Works 04 — 株式会社Retool | UNDRFLX</title>
-    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
-    <link rel="apple-touch-icon" href="assets/images/favicon.png" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="../assets/images/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/common.css" />
-    <link rel="stylesheet" href="../assets/style.css" />
-    <link rel="stylesheet" href="../assets/works-detail.css" />
+    <link rel="stylesheet" href="../assets/css/common.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/works-detail.css" />
   </head>
   <body>
-    <!-- ============================================================
-       HEADER  /  bg:#111111 / 1440×120px
-       共通ヘッダー (index.htmlと同一)
-  ============================================================ -->
     <header class="header">
       <div class="header__inner">
         <a class="header__logo" href="../index.html">UNDRFLX</a>
         <nav class="header__nav">
           <a href="../index.html#works">Works</a>
           <a href="../index.html#about">About</a>
+          <!-- 言語切替ボタン -->
+          <button class="lang-btn" id="langBtn" aria-label="언어 전환 / 言語切替">
+            <span class="lang-btn__item" data-lang-item="ja">JP</span>
+            <span class="lang-btn__sep">/</span>
+            <span class="lang-btn__item" data-lang-item="ko">KO</span>
+          </button>
         </nav>
       </div>
     </header>
@@ -39,8 +41,8 @@
           </div>
 
           <div class="wd-title-section__client-row">
-            <span class="wd-title-section__company">株式会社Retool</span>
-            <span class="wd-title-section__project-name">コーポレートサイトリニューアル</span>
+            <span class="wd-title-section__company" data-ja="株式会社Retool" data-ko="주식회사Retool">株式会社Retool</span>
+            <span class="wd-title-section__project-name" data-ja="コーポレートサイトリニューアル" data-ko="코퍼레이트 사이트 리뉴얼">コーポレートサイトリニューアル</span>
           </div>
         </div>
       </section>
@@ -56,33 +58,45 @@
           <dl class="wd-info-table">
             <!-- 担当役割 -->
             <div class="wd-info-table__row">
-              <dt class="wd-info-table__label">担当役割</dt>
-              <dd class="wd-info-table__value">Webデザイン・コーディング・運用デレクション・運用</dd>
+              <dt class="wd-info-table__label" data-ja="担当役割" data-ko="담당 업무">担当役割</dt>
+              <dd class="wd-info-table__value" data-ja="Webデザイン ･ コーディング ･ 運用デレクション ･ 運用" data-ko="Web디자인 · 퍼블리싱 · 운영 디렉션 · 운영">
+                Webデザイン ･ コーディング ･ 運用デレクション ･ 運用
+              </dd>
             </div>
 
-            <!-- 制作年・期間 -->
+            <!-- 制作年 ･ 期間 -->
             <div class="wd-info-table__row">
-              <dt class="wd-info-table__label">制作年・期間</dt>
-              <dd class="wd-info-table__value">2025年 4月 ~ 9月　5カ月</dd>
+              <dt class="wd-info-table__label" data-ja="制作年 ･ 期間" data-ko="제작 연도 ･ 기간">制作年 ･ 期間</dt>
+              <dd class="wd-info-table__value" data-ja="2025年 4月 ~ 9月　5カ月" data-ko="2025년 4월 ~ 9월　5개월">2025年 4月 ~ 9月　5カ月</dd>
             </div>
 
             <!-- チーム規模 -->
             <div class="wd-info-table__row">
-              <dt class="wd-info-table__label">チーム規模</dt>
+              <dt class="wd-info-table__label" data-ja="チーム規模" data-ko="팀 규모">チーム規模</dt>
               <dd class="wd-info-table__value">
-                <!-- Figma: layout_0N9J4O / col / gap:4px
-                   各行: 役職(160px) + 人数 / layout_W2LT9O -->
-                <span class="wd-team-row"><span class="wd-team-row__role">ディレクター</span><span class="wd-team-row__count">1名</span></span>
-                <span class="wd-team-row"><span class="wd-team-row__role">Webデザイナー</span><span class="wd-team-row__count">1名</span></span>
-                <span class="wd-team-row"><span class="wd-team-row__role">コーダー</span><span class="wd-team-row__count">1名</span></span>
-                <span class="wd-team-row"><span class="wd-team-row__role">プロデューサー</span><span class="wd-team-row__count">1名</span></span>
+                <span class="wd-team-row">
+                  <span class="wd-team-row__role" data-ja="ディレクター" data-ko="디렉터">ディレクター</span>
+                  <span class="wd-team-row__count" data-ja="1名" data-ko="1명">1名</span>
+                </span>
+                <span class="wd-team-row">
+                  <span class="wd-team-row__role" data-ja="Webデザイナー" data-ko="Web디자이너">Webデザイナー</span>
+                  <span class="wd-team-row__count" data-ja="1名" data-ko="1명">1名</span>
+                </span>
+                <span class="wd-team-row">
+                  <span class="wd-team-row__role" data-ja="コーダー" data-ko="퍼블리셔">コーダー</span>
+                  <span class="wd-team-row__count" data-ja="1名" data-ko="1명">1名</span>
+                </span>
+                <span class="wd-team-row">
+                  <span class="wd-team-row__role" data-ja="プロデューサー" data-ko="프로듀서">プロデューサー</span>
+                  <span class="wd-team-row__count" data-ja="1名" data-ko="1명">1名</span>
+                </span>
               </dd>
             </div>
 
             <!-- 使用ツール -->
             <div class="wd-info-table__row">
-              <dt class="wd-info-table__label">使用ツール</dt>
-              <dd class="wd-info-table__value">WordPress・Figma・Illustrator・Photoshop・HTML・CSS・JavaScript</dd>
+              <dt class="wd-info-table__label" data-ja="使用ツール" data-ko="사용 툴">使用ツール</dt>
+              <dd class="wd-info-table__value">WordPress ･ Figma ･ Illustrator ･ Photoshop ･ HTML ･ CSS ･ JavaScript</dd>
             </div>
           </dl>
           <!-- /.wd-info-table -->
@@ -91,8 +105,14 @@
             <div class="wd-overview__head">
               <span class="wd-overview__title">Overview</span>
             </div>
-            <p class="wd-overview__text">
-              ITツール開発会社・Retoolのコーポレートサイトリニューアルプロジェクトを担当。WordPressを活用した情報設計の見直しから設計・実装まで一貫して対応しました。企業の強みが伝わるサイト構造の実現と、将来の運用・改修を見据えたコンポーネント設計に注力し、小規模チームで効率的に成果物を納品しました。
+            <p
+              class="wd-overview__text"
+              data-ja-html="ITツール開発会社 ･ Retoolのコーポレートサイトリニューアルプロジェクトを担当。WordPressを活用した情報設計の見直しから設計 ･ 実装まで一貫して対応しました。企業の強みが伝わるサイト構造の実現と、将来の運用 ･ 改修を見据えたコンポーネント設計に注力し、小規模チームで効率的に成果物を納品しました。"
+              data-ko-html="IT툴 개발 기업 Retool의 코퍼레이트 사이트 리뉴얼 프로젝트를 담당했습니다.&lt;br /&gt;WordPress 기반으로 정보 구조(IA) 개선부터 설계 및 구현까지 전 과정을 일관되게 수행했으며, 기업의 강점이 명확하게 전달되는 사이트 구조 설계와 향후 운영·확장을 고려한 컴포넌트 구조 설계에 집중했습니다.&lt;br /&gt;소규모 팀 환경에서도 효율적으로 프로젝트를 완수하고 결과물을 납품했습니다.
+"
+            >
+              ITツール開発会社 ･ Retoolのコーポレートサイトリニューアルプロジェクトを担当。WordPressを活用した情報設計の見直しから設計 ･
+              実装まで一貫して対応しました。企業の強みが伝わるサイト構造の実現と、将来の運用 ･ 改修を見据えたコンポーネント設計に注力し、小規模チームで効率的に成果物を納品しました。
             </p>
           </div>
           <!-- /.wd-overview -->
@@ -113,7 +133,6 @@
             <div class="wd-showcase__img-pc">
               <img src="../assets/images/works_retool_pc_01.png" alt="PC表示" />
             </div>
-
             <div class="wd-showcase__img-sp">
               <img src="../assets/images/works_retool_sp_01.png" alt="SP表示" />
             </div>
@@ -131,9 +150,24 @@
               <span class="wd-overview__title">Strategy</span>
             </div>
             <ul class="point-list">
-              <li>ヒアリングを通じて経営者・担当者のブランド認識を整理し、ブランドプリズムとして体系化</li>
-              <li>ブランドプリズムをもとにデザインガイド（カラーパレット・フォント・トーン&マナー）を策定し、デザイン判断の根拠を明文化</li>
-              <li>WordPressのカスタム投稿タイプ・カスタムフィールドを活用し、担当者が最小限の操作でコンテンツを更新できる投稿フローを設計</li>
+              <li
+                data-ja="ヒアリングを通じて経営者 ･ 担当者のブランド認識を整理し、ブランドプリズムとして体系化"
+                data-ko="인터뷰를 통해 경영진 및 실무자의 브랜드 인식을 정리하고, 이를 브랜드 프리즘 형태로 체계화"
+              >
+                ヒアリングを通じて経営者 ･ 担当者のブランド認識を整理し、ブランドプリズムとして体系化
+              </li>
+              <li
+                data-ja="ブランドプリズムをもとにデザインガイド（カラーパレット ･ フォント ･ トーン&amp;マナー）を策定し、デザイン判断の根拠を明文化"
+                data-ko="브랜드 프리즘을 기반으로 디자인 가이드(컬러, 타이포그래피, 톤앤매너)를 수립하여 디자인 의사결정 기준 명확화"
+              >
+                ブランドプリズムをもとにデザインガイド（カラーパレット ･ フォント ･ トーン&マナー）を策定し、デザイン判断の根拠を明文化
+              </li>
+              <li
+                data-ja="WordPressのカスタム投稿タイプ ･ カスタムフィールドを活用し、担当者が最小限の操作でコンテンツを更新できる投稿フローを設計"
+                data-ko="WordPress의 커스텀 포스트 타입(CPT)과 커스텀 필드를 활용해, 비전문가도 쉽게 콘텐츠를 관리할 수 있는 게시 구조 설계"
+              >
+                WordPressのカスタム投稿タイプ ･ カスタムフィールドを活用し、担当者が最小限の操作でコンテンツを更新できる投稿フローを設計
+              </li>
             </ul>
           </div>
 
@@ -142,33 +176,43 @@
               <span class="wd-overview__title">Key Contributions & Results</span>
             </div>
             <ul class="point-list">
-              <li>ブランドの軸が不明確な状態からスタートし、ブランドプリズム構築→デザインガイド策定→サイト設計という上流からの一貫対応を実現</li>
-              <li>WordPressの投稿機能を最適化し、非エンジニアの担当者でも迷わず更新できる運用環境を構築</li>
-              <li>デザインガイドの策定により、今後の制作物においてもブランドの一貫性を維持できる基盤を構築</li>
+              <li
+                data-ja="ブランドの軸が不明確な状態からスタートし、ブランドプリズム構築→デザインガイド策定→サイト設計という上流からの一貫対応を実現"
+                data-ko="브랜드 방향성이 불명확한 상태에서 시작하여, 브랜드 프리즘 구축 → 디자인 가이드 수립 → 사이트 설계까지 상위 단계부터 일관된 프로세스 구"
+              >
+                ブランドの軸が不明確な状態からスタートし、ブランドプリズム構築→デザインガイド策定→サイト設計という上流からの一貫対応を実現
+              </li>
+              <li
+                data-ja="WordPressの投稿機能を最適化し、非エンジニアの担当者でも迷わず更新できる運用環境を構築"
+                data-ko="WordPress 게시 기능을 최적화하여, 비개발자 담당자도 혼선 없이 운영 가능한 환경 구현"
+              >
+                WordPressの投稿機能を最適化し、非エンジニアの担当者でも迷わず更新できる運用環境を構築
+              </li>
+              <li
+                data-ja="デザインガイドの策定により、今後の制作物においてもブランドの一貫性を維持できる基盤を構築"
+                data-ko="디자인 가이드 구축을 통해 향후 제작물에서도 브랜드 일관성을 유지할 수 있는 기반 마련"
+              >
+                デザインガイドの策定により、今後の制作物においてもブランドの一貫性を維持できる基盤を構築
+              </li>
             </ul>
           </div>
           <!-- /.wd-overview -->
         </div>
         <!-- /.wd-info-section__inner -->
+        <div class="btn-works">
+          <a href="../index.html#works" class="btn-topWorks">UNDRFLX Works</a>
+        </div>
       </section>
 
-      <!-- ============================================================
-         PAGE NAVIGATION  /  前後ページリンク
-    ============================================================ -->
       <nav class="wd-page-nav">
         <a href="works03.html" class="wd-page-nav__back">← Prev Works</a>
-        <a href="../index.html#works" class="btn-topWorks">UNDRFLX Works</a>
         <div class="wd-page-nav__pager">
           <span class="wd-page-nav__current">04 / 06</span>
-          <!-- 次のWorksページ: 他ページ作成後にhrefを更新してください -->
           <a href="works05.html" class="wd-page-nav__next">Next Work →</a>
         </div>
       </nav>
     </main>
 
-    <!-- ============================================================
-       FOOTER  /  bg:#242424 / 共通フッター
-  ============================================================ -->
     <footer class="footer">
       <div class="footer__inner">
         <span><a href="../index.html" class="footer__logo">UNDRFLX</a></span>
@@ -178,6 +222,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="../assets/main.js"></script>
+    <script src="../assets/js/main.js"></script>
   </body>
 </html>

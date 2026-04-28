@@ -137,6 +137,47 @@ a {
 }
 
 /* ============================================================
+   LANGUAGE SWITCHER
+   編集ポイント: font-size / padding / border-color
+============================================================ */
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 5px 12px;
+  cursor: pointer;
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  transition: border-color 0.3s;
+}
+
+.lang-btn:hover {
+  border-color: rgba(255, 61, 27, 0.5);
+}
+
+.lang-btn__sep {
+  color: rgba(255, 255, 255, 0.2);
+  font-weight: 300;
+}
+
+/* 非アクティブ言語 */
+.lang-btn__item {
+  color: rgba(255, 255, 255, 0.35);
+  transition: color 0.3s;
+}
+
+/* アクティブ言語: #FF3D1B で強調 */
+[data-lang="ja"] .lang-btn__item[data-lang-item="ja"],
+[data-lang="ko"] .lang-btn__item[data-lang-item="ko"] {
+  color: #ff3d1b;
+}
+
+/* ============================================================
    HERO
    100vh / bg:#111111
    Title frame: x:127 y:210 / width:1200px / col gap:40px
